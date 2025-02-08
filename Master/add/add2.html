@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/4c8957d542.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="add.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+    <title>تدوير عنصر</title>
+
+    <style>
+        #map {
+            height: 300px;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="nav"></div>
+
+    <main class="animate hidden bg py-5" id="content">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2 or">
+                    <button type="button" class="btn btn-green">تأكيد</button>
+                </div>
+                <div
+                    class="col-md-9 rounded text-white py-5 bg-green d-flex justify-content-center align-items-center form-container">
+                    <form action="" class="w-75" id="f-container">
+                        <h2 class="laz text-center">معلومات التسليم</h2>
+                        <p>
+                            هذه هي الأوقات التي يستطيع الفريق المختص جمع المواد من منطقتك,
+                            الرجاء اختيار الوقت المناسب لك:
+                        </p>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="time" class="form-label fw-bold">وقت التسليم</label>
+                                <input type="time" class="form-control" id="time" />
+                            </div>
+                            <div class="col-md-6">
+                                <label for="date" class="form-label fw-bold">تاريخ التسليم</label>
+                                <input type="date" class="form-control" id="date" />
+                            </div>
+                        </div>
+                        <h2 class="laz text-center mt-5">حدد موقعك:</h2>
+                        <div id="map"></div>
+
+                        <div class="row mt-3">
+                            <div class="col-md-6">
+                                <div>
+                                    <input class="form-check-input" type="checkbox" id="fastDelivery" />
+                                    <label class="form-check-label text-white fw-bold" for="fastDelivery">
+                                        خدمة التسليم السريع
+                                    </label>
+                                    <p class="fw-lighter">
+                                        اذا كنت تريد تسليم المواد في اقرب وقت يلائمك يمكنك
+                                        الاستفادة من التسليم السريع حيث يمكنك تحديد الوقت واليوم
+                                        يترتب على هذه الخدمة الدفع
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label for="paymentMethod" class="form-label text-white fw-bold">طريقة الدفع</label>
+                                <select id="paymentMethod" class="form-select" disabled>
+                                    <option value="cash">عند التسليم</option>
+                                    <option value="card">بطاقة ائتمان</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div id="cardInfo" class="mt-3" style="display: none">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label for="cardNumber" class="form-label text-white fw-bold">رقم البطاقة</label>
+                                    <input type="text" id="cardNumber" class="form-control mb-2"
+                                        placeholder="أدخل رقم البطاقة" />
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="cardExpiry" class="form-label text-white fw-bold">تاريخ انتهاء
+                                        البطاقة</label>
+                                    <input type="month" id="cardExpiry" class="form-control mb-2"
+                                        placeholder="شهر/سنة" />
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label for="cardCVV" class="form-label   text-white fw-bold">رمز التحقق
+                                        (CVV)</label>
+                                    <input type="text" id="cardCVV" class="form-control mb-2"
+                                        placeholder="أدخل رمز التحقق" />
+
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label for="cardholderName" class="form-label text-white fw-bold">اسم صاحب
+                                        البطاقة</label>
+                                    <input type="text" id="cardholderName" class="form-control mb-2"
+                                        placeholder="اسم صاحب البطاقة" />
+
+                                </div>
+                            </div>
+
+
+                            <p class="text-white">المبلغ الإجمالي: 3 دينار أردني</p>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-1 p-5 or2">
+                    <button onclick="back()" style="border: none !important; background-color: transparent !important;" ><i class="fa-regular fa-circle-left" style="font-size: 60px; color: #02542d"></i></button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <div id="footer"></div>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+    <script src="add.js"></script>
+</body>
+
+</html>

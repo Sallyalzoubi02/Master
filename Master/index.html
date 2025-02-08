@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- Video Element -->
+    <video id="myVideo" width="100%" height="auto" autoplay muted preload="auto">
+        <source src="img/Picsart_24-12-13_19-48-38-539.mp4" type="video/mp4">
+    </video>
+    
+
+    <script>
+        // Event listener to redirect after video ends
+        document.getElementById("myVideo").addEventListener('ended', function () {
+            window.location.href = 'home/home.html';  // Path to the home page
+        });
+    </script>
+</body>
+
+</html>

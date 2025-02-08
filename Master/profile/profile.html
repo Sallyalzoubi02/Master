@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div id="nav">
+
+    </div>
+    <section class="bg py-5">
+
+        <div class="container py-5">
+            
+
+            <div class="row">
+                <!-- Profile Sidebar -->
+                <div class="col-lg-4">
+                    <div class="card mb-4 shadow-lg rounded-lg">
+                        <div class="card-body text-center">
+                            <img id="profileImage" src="icon.jpg" alt="avatar"
+                                class="rounded-circle img-fluid border shadow-sm"
+                                style="width: 150px; height: 150px; object-fit: cover;">
+                            <h2>الاسم </h2>
+                            <p>البريد الإلكتروني</p>
+                            <div class="row">
+                                <div class="col-md">
+                                    <p class="points">النقاط:</p>
+                                </div>
+                                <div class="col-md">
+                                    <p class="times">التدوير:</p>
+                                </div>
+                            </div>
+                            <a href="#" class="btn btn-green mt-3 px-5 rounded-pill animated fadeInUp"
+                                data-bs-toggle="modal" data-bs-target="#editProfileModal"
+                                style="border-color: #04534F !important;">تعديل الملف</a>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-8">
+                    <!-- Profile Details Card -->
+                    <div class="card mb-4 shadow-lg rounded-lg">
+                        <div class="card-body">
+                            <h4 class="card-title text-white fw-bold animated fadeInDown">المعلومات الشخصية </h4>
+                            <hr class="bg-primary">
+                            <div class="row mb-3 animated fadeInLeft">
+                                <div class="col-sm-4">
+                                    <p class="mb-0 fw-bold">الاسم:</p>
+                                </div>
+                                <div class="col-sm-8">
+                                    <p class="text-white-50 mb-0" id="actualFullName">سالي الزعبي</p>
+                                </div>
+                            </div>
+                            <div class="row mb-3 animated fadeInRight">
+                                <div class="col-sm-4">
+                                    <p class="mb-0 fw-bold">البريد الإلكتروني:</p>
+                                </div>
+                                <div class="col-sm-8">
+                                    <p class="text-white-50 mb-0" id="actualEmail">sallyalzoubi60@gmail.com</p>
+                                </div>
+                            </div>
+                            <div class="row mb-3 animated fadeInLeft">
+                                <div class="col-sm-4">
+                                    <p class="mb-0 fw-bold">الهاتف:</p>
+                                </div>
+                                <div class="col-sm-8">
+                                    <p class="text-white-50 mb-0" id="actualPhone">078945612</p>
+                                </div>
+                            </div>
+
+                            <div class="row mb-3 animated fadeInLeft">
+                                <div class="col-sm-4">
+                                    <p class="mb-0 fw-bold">المحافظة:</p>
+                                </div>
+                                <div class="col-sm-8">
+                                    <p class="text-white-50 mb-0" id="actualCity">اربد</p>
+                                </div>
+                            </div>
+                            <div class="row mb-3 animated fadeInLeft">
+                                <div class="col-sm-4">
+                                    <p class="mb-0 fw-bold">العنوان:</p>
+                                </div>
+                                <div class="col-sm-8">
+                                    <p class="text-white-50 mb-0" id="actualAddress">حي الحكمة</p>
+                                </div>
+                            </div>
+                            <div class="row mb-3 animated fadeInLeft">
+                                <div class="col-sm-4">
+                                    <p class="mb-0 fw-bold">نوع الحساب:</p>
+                                </div>
+                                <div class="col-sm-8">
+                                    <p class="text-white-50 mb-0" id="actualType">أفراد</p>
+                                </div>
+                            </div>
+                            <div class="row mb-3 animated fadeInRight">
+                                <div class="col-sm-4">
+                                    <p class="mb-0 fw-bold">الجنس:</p>
+                                </div>
+                                <div class="col-sm-8">
+                                    <p class="text-white-50 mb-0" id="actualGender">انثى</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container mt-5 py-5">
+                <div class="row">
+                    <div class="col-md-6 d-flex align-items-center gap-3 small">
+                        <p style="margin: 0;" class="laz text">لجمع المواد بشكل دوري    :</p>
+                        <a href="#" class="btn btn-green px-5 rounded-pill laz" id="subscribe" onclick="sub()">إشترك الأن مع أثر vip</a>
+                    </div>
+
+                    <div class="col-md-6 d-flex align-items-center justify-content-end gap-3">
+                        <a href="#" class="btn btn-red px-5 rounded-pill laz">تسجيل خروج</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Edit Profile Modal -->
+        <div class="modal fade" id="editProfileModal" tabindex="-1" aria-labelledby="editProfileModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="editProfileModalLabel">تعدبل الملف</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="editProfileForm">
+                            <div class="mb-3">
+                                <label for="fullName" class="form-label">الاسم</label>
+                                <input type="text" class="form-control" id="profileFullNameInput">
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">البريد الإلكتروني</label>
+                                <input type="email" class="form-control" id="profileEmailInput" readonly>
+                            </div>
+                            <div class="mb-3">
+                                <label for="phone" class="form-label">الهاتف</label>
+                                <input type="text" class="form-control" id="phone">
+                            </div>
+                            <div class="mb-3">
+                                <label for="address" class="form-label">العنوان</label>
+                                <input type="text" class="form-control" id="address">
+                            </div>
+                            <div class="mb-3">
+                                <label for="city" class="form-label">المحافظة</label>
+                                <select name="city" id="city" placeholder="المحافظة">
+                                    <option value="Amman">Amman</option>
+                                    <option value="Irbid">Irbid</option>
+                                    <option value="Jerash">Jerash</option>
+                                    <option value="Ajloun">Ajloun</option>
+                                    <option value="M'aan">M'aan</option>
+                                    <option value="Aqaba">Aqaba</option>
+                                    <option value="Altafelah">Altafelah</option>
+                                    <option value="Alkarak">Alkarak</option>
+                                    <option value="Salt">As-Salt</option>
+                                    <option value="Madaba">Madaba</option>
+                                    <option value="Zarqa">Zarqa</option>
+                                    <option value="Almafraq">Almafraq</option>
+                                  </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="gender" class="form-label">الجنس</label>
+                                <select class="form-control" id="gender" disabled>
+                                    <option value="male">ذكر</option>
+                                    <option value="female">انثى</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="profileImageInput" class="form-label">صورة شخصية</label>
+                                <input type="file" class="form-control" id="profileImageInput"
+                                    onchange="previewImage(event)">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-green" onclick="saveChanges()">Save Changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id ='recycleCard'>
+        
+        <div class="container d-flex flex-column justify-content-md-center align-items-md-center">
+            <div class="row w-100 mb-5 justify-content-end d-flex">
+                <h1 class="laz ">مشاركاتك في التدوير:</h1>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-4  mb-5">
+                    <div class="card mb-5" style="width: 100%;">
+                        <div class="card-head d-flex justify-content-center align-items-center">
+                            <img src="../img/empty bottle.webp" class="card-img-top" alt="...">
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title m-2">زجاجات فارغة</h3>
+                            <div class="row mb-3 mt-3">
+                                <div class="col-sm-6">
+                                    <p class="mb-0 fw-bold text-par">النوع:</p>
+                                </div>
+                                <div class="col-sm-6">
+                                    <p class="text-muted mb-0" id="type"></p>
+                                </div>
+                            </div>
+            
+                            <div class="row mb-3 mt-3">
+                                <div class="col-sm-6">
+                                    <p class="mb-0 fw-bold text-par">الكمية:</p>
+                                </div>
+                                <div class="col-sm-6">
+                                    <p class="text-muted mb-0" id="amount"></p>
+                                </div>
+                            </div>
+            
+                            <div class="row mb-3 mt-3">
+                                <div class="col-sm-6">
+                                    <p class="mb-0 fw-bold text-par">التسليم:</p>
+                                </div>
+                                <div class="col-sm-6">
+                                    <p class="text-muted mb-0" id="duedate"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4  mb-5">
+                    <div class="card mb-5" style="width: 100%;">
+                        <div class="card-head d-flex justify-content-center align-items-center">
+                            <img src="../img/empty bottle.webp" class="card-img-top" alt="...">
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title m-2">زجاجات فارغة</h3>
+                            <div class="row mb-3 mt-3">
+                                <div class="col-sm-6">
+                                    <p class="mb-0 fw-bold text-par">النوع:</p>
+                                </div>
+                                <div class="col-sm-6">
+                                    <p class="text-muted mb-0" id="type"></p>
+                                </div>
+                            </div>
+            
+                            <div class="row mb-3 mt-3">
+                                <div class="col-sm-6">
+                                    <p class="mb-0 fw-bold text-par">الكمية:</p>
+                                </div>
+                                <div class="col-sm-6">
+                                    <p class="text-muted mb-0" id="amount"></p>
+                                </div>
+                            </div>
+            
+                            <div class="row mb-3 mt-3">
+                                <div class="col-sm-6">
+                                    <p class="mb-0 fw-bold text-par">التسليم:</p>
+                                </div>
+                                <div class="col-sm-6">
+                                    <p class="text-muted mb-0" id="duedate"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4  mb-5">
+                    <div class="card mb-5" style="width: 100%;">
+                        <div class="card-head d-flex justify-content-center align-items-center">
+                            <img src="../img/empty bottle.webp" class="card-img-top" alt="...">
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title m-2">زجاجات فارغة</h3>
+                            <div class="row mb-3 mt-3">
+                                <div class="col-sm-6">
+                                    <p class="mb-0 fw-bold text-par">النوع:</p>
+                                </div>
+                                <div class="col-sm-6">
+                                    <p class="text-muted mb-0" id="type"></p>
+                                </div>
+                            </div>
+            
+                            <div class="row mb-3 mt-3">
+                                <div class="col-sm-6">
+                                    <p class="mb-0 fw-bold text-par">الكمية:</p>
+                                </div>
+                                <div class="col-sm-6">
+                                    <p class="text-muted mb-0" id="amount"></p>
+                                </div>
+                            </div>
+            
+                            <div class="row mb-3 mt-3">
+                                <div class="col-sm-6">
+                                    <p class="mb-0 fw-bold text-par">التسليم:</p>
+                                </div>
+                                <div class="col-sm-6">
+                                    <p class="text-muted mb-0" id="duedate"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 d-flex justify-content-center align-items-center add  mb-5">
+                    <button class="btn-circle" onclick="add()">
+                        <i class="fa-solid fa-plus"></i>
+                      </button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <div id="footer"></div>
+    <script src="script.js"></script>
+    <!-- Bootstrap JS & Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
