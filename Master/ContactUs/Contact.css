@@ -116,6 +116,12 @@ hr{
 }
 
 /*-----------------------FAQ------------------------------*/
+.hh{
+    height: max-content !important;
+}
+.fixed-h{
+    height: 550px;
+}
 .faq-container {
     max-width: 100%;
     margin: 20px auto;

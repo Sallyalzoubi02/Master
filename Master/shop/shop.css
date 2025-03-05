@@ -46,7 +46,7 @@
     justify-content: space-between; /* Spread cards equally on larger screens */
     flex-wrap: wrap; /* Allow wrapping on smaller screens */
     gap: 16px; /* Add spacing between cards */
-    padding: 16px;
+    padding: 50px;
 }
 
 /* Ensure cards have a dynamic width */

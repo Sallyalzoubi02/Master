@@ -92,7 +92,7 @@ p{
 .card {
     border: #198754;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    background-color: rgba(17, 139, 80, 0.82) !important;
+    background-color: rgba(17, 139, 80) !important;
     color: #fff !important;
     height: 100% !important;
 }

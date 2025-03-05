@@ -113,7 +113,7 @@ function renderCart() {
                 </div>
             </td>
             <td class="align-middle">
-                <p class="mb-0 text-center" style="font-weight: 500;">$${(item.price * item.quantity).toFixed(2)}</p>
+                <p class="mb-0 text-center" dir='ltr' style="font-weight: 500; "> ${(item.price * item.quantity).toFixed(2)} JD</p>
             </td>
             <td class="align-middle">
                 <div class="d-flex align-item-center justify-content-center flex-row">
