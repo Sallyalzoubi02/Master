@@ -4,12 +4,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="forgetpass.css">
   <title>إعادة تعيين كلمة السر</title>
+
 </head>
 
 <body>
-  <div id="nav" dir="ltr"></div>
+  <div id="nav" ></div>
 
   <main id="content">
     <div class="forms">
@@ -20,44 +21,43 @@
         <div class="row justify-content-center">
           <div class="col-lg-6 col-md-8">
             <div class="text-center mb-4">
-              <h2 class="mb-2">Reset Password</h2>
-              <p class="text-muted">Follow the steps to reset your password securely</p>
+              <h2 class="mb-2">إعادة تعيين كلمة السر</h2>
+              <p class="text-muted">إتبع الخطوات لإاعدة تعيين كلمة سر حسابك</p>
             </div>
 
             <div class="card reset-card">
               <div class="card-body p-4">
                 <!-- Step Indicator -->
                 <div class="step-indicator mb-4">
-                  <div class="step active">1</div>
+                  <div id="step-1" class="step active">1</div>
+                  <div  class="step-connector"></div>
+                  <div id="step-2" class="step">2</div>
                   <div class="step-connector"></div>
-                  <div class="step">2</div>
-                  <div class="step-connector"></div>
-                  <div class="step">3</div>
+                  <div id="step-3" class="step">3</div>
                 </div>
 
                 <!-- Step 1: Email Verification -->
                 <div class="step-content" id="step1">
-                  <h5 class="mb-4">Email Verification</h5>
+                  <h5 class="mb-4">التحقق من البريد الإلكتروني</h5>
                   <form>
                     <div class="mb-4">
-                      <label class="form-label">Email Address</label>
+                      <label class="form-label">البريد الإلكتروني</label>
                       <div class="input-group">
                         <span class="input-group-text">
                           <i class="fas fa-envelope"></i>
                         </span>
                         <input type="email" class="form-control" placeholder="Enter your email">
                       </div>
-                      <div class="form-text">We'll send a verification code to this email</div>
+                      <div class="form-text">سوف نرسل كود تحقق لهذا البريد</div>
                     </div>
-                    <button class="btn btn-primary w-100">Send Verification Code</button>
+                    <button class="btn btn-green w-100">ارسال كود التحقق</button>
                   </form>
                 </div>
 
                 <!-- Step 2: Code Verification -->
                 <div class="step-content d-none" id="step2">
-                  <h5 class="mb-4">Enter Verification Code</h5>
-                  <p class="text-muted mb-4">We've sent a verification code to your email. Please enter it
-                    below.</p>
+                  <h5 class="mb-4">ادخل كود التحقق</h5>
+                  <p class="text-muted mb-4">لقد ارسلنا كود تحقق للبريد الإلكتروني الخاص بك, رجاءً تفقد صندوق البريد</p>
                   <div class="d-flex justify-content-center mb-4">
                     <input type="text" class="verification-input" maxlength="1">
                     <input type="text" class="verification-input" maxlength="1">
@@ -67,18 +67,18 @@
                     <input type="text" class="verification-input" maxlength="1">
                   </div>
                   <div class="text-center mb-4">
-                    <span class="text-muted">Didn't receive the code? </span>
-                    <a href="#" class="text-decoration-none">Resend</a>
+                    <span class="text-muted">لم تتلقى كود التحقق ؟</span>
+                    <a href="#" class="text-decoration-none">إعادة الارسال</a>
                   </div>
-                  <button class="btn btn-primary w-100">Verify Code</button>
+                  <button class="btn btn-green w-100">التحقق</button>
                 </div>
 
                 <!-- Step 3: New Password -->
                 <div class="step-content d-none" id="step3">
-                  <h5 class="mb-4">Create New Password</h5>
+                  <h5 class="mb-4">تعيين كلمة مرور جديدة</h5>
                   <form>
                     <div class="mb-4">
-                      <label class="form-label">New Password</label>
+                      <label class="form-label">كلمة مرور جديدة</label>
                       <div class="input-group">
                         <span class="input-group-text">
                           <i class="fas fa-lock"></i>
@@ -94,7 +94,7 @@
                     </div>
 
                     <div class="mb-4">
-                      <label class="form-label">Confirm Password</label>
+                      <label class="form-label">تأكيد كلمة المرور</label>
                       <div class="input-group">
                         <span class="input-group-text">
                           <i class="fas fa-lock"></i>
@@ -107,28 +107,28 @@
                     </div>
 
                     <div class="mb-4">
-                      <h6 class="mb-2">Password Requirements:</h6>
+                      <h6 class="mb-2">متطلبات كلمة المرور:</h6>
                       <ul class="requirement-list list-unstyled">
                         <li class="valid">
                           <i class="fas fa-check-circle me-2"></i>
-                          At least 8 characters
+                          ثمانية رموز على الأقل
                         </li>
                         <li>
                           <i class="fas fa-circle me-2"></i>
-                          Include uppercase letters
+                          يحتوي على حرف كبير
                         </li>
                         <li>
                           <i class="fas fa-circle me-2"></i>
-                          Include special characters
+                          يحتوي على رمز خاص $,@,-,_ .....
                         </li>
                         <li>
                           <i class="fas fa-circle me-2"></i>
-                          Include numbers
+                          يحتوي على رقم
                         </li>
                       </ul>
                     </div>
 
-                    <button class="btn btn-primary w-100">Reset Password</button>
+                    <button class="btn btn-green w-100">إعادة تعيين</button>
                   </form>
                 </div>
 
@@ -137,10 +137,9 @@
                   <div class="success-checkmark">
                     <i class="fas fa-check"></i>
                   </div>
-                  <h5 class="mb-3">Password Reset Successful!</h5>
-                  <p class="text-muted mb-4">Your password has been successfully reset. You can now log in
-                    with your new password.</p>
-                  <a href="#" class="btn btn-primary">Back to Login</a>
+                  <h5 class="mb-3">تمت اعادة تعيين كلمة السر بنجاح!</h5>
+                  <p class="text-muted mb-4">لقد تم إعادة تعيين كلمة المرور الخاصة بك بنجاح. يمكنك الآن تسجيل الدخول باستخدام كلمة المرور الجديدة.</p>
+                  <a href="#" class="btn btn-green">العودة الى تسجيل الدخول</a>
                 </div>
               </div>
             </div>
@@ -151,7 +150,7 @@
   </main>
 
   <div id="footer"></div>
-  <script src="reset.js"></script>
+  <script src="forgetpass.js"></script>
 
 </body>
 

@@ -1,212 +1,297 @@
-@import url('https://fonts.googleapis.com/css2?family=Lalezar&display=swap');
-*{
-    /* color: #002E18; */
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+@import url("https://fonts.googleapis.com/css2?family=Lalezar&display=swap");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css");
+
+/* General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 html::-webkit-scrollbar {
-    width: 1rem;
-  }
-  
-  html::-webkit-scrollbar-track {
-    background: #19875492;
-  }
-  
-  html::-webkit-scrollbar-thumb {
-    background: #198754;
-    border-radius: 5rem;
+  width: 1rem;
 }
-.bg{
-    background-image: url(../img/background1.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+
+html::-webkit-scrollbar-track {
+  background: #19875492;
 }
-/* for vip */
-.bg1{
-    background-image: url(../img/background-رهح.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+
+html::-webkit-scrollbar-thumb {
+  background: #198754;
+  border-radius: 5rem;
 }
+
+body {
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.9),
+      rgba(255, 255, 255, 0.9)
+    ),
+    url(../img/ho.jpg);
+  background-attachment: fixed;
+  color: #002e18;
+}
+
+/* Crown Icon for VIP */
 .crown-icon {
-    position: absolute;
-    top: 5px; /* Adjust as needed */
-    left: 5px; /* Adjust as needed */
-    width: 60px; /* Adjust size as needed */
-    height: auto; /* Maintain aspect ratio */
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 60px;
+  height: auto;
 }
 
-
-/* for vip */
-
-p{
-    cursor: default;
-}
-.row{
-    width: 100% !important;
-}
-#recycleCard {
-    padding-top: 90px;
-}
-#recycleCard .card {
-    background-color: #fff !important;
-    color: #000 !important;
-    border: 1px solid #02542D;
-    /* Remove height styling */
-    height: auto;
+/* Text Styles */
+p {
+  cursor: default;
 }
 
-#recycleCard .card .card-body {
-    /* Remove explicit height */
-    padding: 1rem; /* Adjust padding if needed */
-    height: auto;
+.laz {
+  font-family: "Lalezar", cursive !important;
 }
 
-#recycleCard .card-head {
-    /* Ensure proper alignment for content */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 1rem; /* Reduce excessive margin */
+.text {
+  text-align: center;
+  font-size: 24px;
 }
 
-#recycleCard .card-img-top {
-    width: auto; /* Ensure the image adjusts properly */
-    height: auto;
-    max-width: 90%; /* Prevent overflow */
+.text-par {
+  font-size: 18px;
 }
 
-
-.laz{
-    font-family: Lalezar !important;
-}
-
-.text{
-    text-align: center;
-    font-size: 24px;
-}
-.text-par{
-    font-size: 18px;
-}
+/* Card Styles */
 .card {
-    border: #198754;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    background-color: rgba(17, 139, 80) !important;
-    color: #fff !important;
-    height: 100% !important;
+  border: 1px solid #198754;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: rgba(17, 139, 80) !important;
+  color: #fff !important;
+  height: 100% !important;
 }
 
 .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
-
 
 .shadow-lg {
-    box-shadow: 0 4px 6px rgba(4, 83, 79, 0.3); 
+  box-shadow: 0 4px 6px rgba(4, 83, 79, 0.3);
 }
 
-.add{
-    height: 657.14px;
+#recycleCard .card {
+  width: 100%;
+  height: 300px !important ;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 }
+
+.remove-when-use {
+  width: 100%;
+  color: black;
+}
+
+.details > p {
+  font-size: 0.8em;
+  margin-top: 0.5em;
+}
+
+.details > label {
+  font-weight: bold;
+}
+
+.details {
+  color: white;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  width: 100%;
+  background-color: #118b50;
+  position: absolute;
+  bottom: 0;
+  height: 2.6em;
+  transition: height 0.5s ease-in-out;
+  padding: 0.6em;
+  overflow: hidden;
+}
+
+#recycleCard .card:hover > .details {
+  height: 6.7em;
+}
+
+/* Add Button */
+
+
 .btn-circle {
-    background-color: #198754; /* Green background */
-    color: white; /* White plus sign */
-    border: none; /* Remove border */
-    width: 50%; /* Set width */
-    height: 170px ; /* Set height */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%; /* Makes it circular */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow */
-    transition: transform 0.2s ease; /* Smooth hover effect */
-  }
-
-  .btn-circle:hover {
-    background-color: #145c42; /* Darker green on hover */
-    transform: scale(1.1); /* Slight zoom effect */
-  }
-
-  .btn-circle i {
-    font-size: 7.5rem; /* Adjust size of the plus sign */
-  }
-
-.btn-green{
-    --bs-btn-color: #fff !important;
-    --bs-btn-bg: #02542D !important;
-    --bs-btn-border-color: #02542D;
-    --bs-btn-hover-color: #02542D;
-    --bs-btn-hover-bg: #fff;
-    --bs-btn-hover-border-color: #02542D !important;
-    --bs-btn-focus-shadow-rgb: 49, 132, 253;
-    --bs-btn-active-color: #fff;
-    --bs-btn-active-bg: #02542D;
-    --bs-btn-active-border-color: #02542D;
-    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-    --bs-btn-disabled-color: #fff;
-    --bs-btn-disabled-bg: #02542D;
-    --bs-btn-disabled-border-color: #02542D;
-    border-radius: 170px !important;
-    width: 50% !important;
+  background-color: #198754;
+  color: white;
+  border: none;
+  width: 50%;
+  height: 170px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
 }
-.btn-red{
-    --bs-btn-color: #fff !important;
-    --bs-btn-bg: #7a0505 !important;
-    --bs-btn-border-color: #7a0505;
-    --bs-btn-hover-color: #7a0505;
-    --bs-btn-hover-bg: #fff;
-    --bs-btn-hover-border-color: #7a0505 !important;
-    --bs-btn-focus-shadow-rgb: 49, 132, 253;
-    --bs-btn-active-color: #fff;
-    --bs-btn-active-bg: #7a0505;
-    --bs-btn-active-border-color: #7a0505;
-    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-    --bs-btn-disabled-color: #fff;
-    --bs-btn-disabled-bg: #7a0505;
-    --bs-btn-disabled-border-color: #7a0505;
-    border-radius: 170px !important;
+
+.btn-circle:hover {
+  background-color: #145c42;
+  transform: scale(1.1);
 }
+
+.btn-circle i {
+  font-size: 7.5rem;
+}
+
+/* Buttons */
+.btn-green {
+  --bs-btn-color: #fff !important;
+  --bs-btn-bg: #02542d !important;
+  --bs-btn-border-color: #02542d;
+  --bs-btn-hover-color: #02542d;
+  --bs-btn-hover-bg: #fff;
+  --bs-btn-hover-border-color: #02542d !important;
+  --bs-btn-focus-shadow-rgb: 49, 132, 253;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #02542d;
+  --bs-btn-active-border-color: #02542d;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #fff;
+  --bs-btn-disabled-bg: #02542d;
+  --bs-btn-disabled-border-color: #02542d;
+  border-radius: 170px !important;
+  width: 50% !important;
+}
+
+.btn-red {
+  --bs-btn-color: #fff !important;
+  --bs-btn-bg: #7a0505 !important;
+  --bs-btn-border-color: #7a0505;
+  --bs-btn-hover-color: #7a0505;
+  --bs-btn-hover-bg: #fff;
+  --bs-btn-hover-border-color: #7a0505 !important;
+  --bs-btn-focus-shadow-rgb: 49, 132, 253;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #7a0505;
+  --bs-btn-active-border-color: #7a0505;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #fff;
+  --bs-btn-disabled-bg: #7a0505;
+  --bs-btn-disabled-border-color: #7a0505;
+  border-radius: 170px !important;
+}
+
 .btn-outline {
-    color: #fff !important; /* Text color black */
-    background-color: #000 ; /* Background color white */
-    border: 1px solid #fff ; /* Border color black */
-  }
-  
-  .btn-outline:hover,
-  .btn-outline:focus,
-  .btn-outline:active {
-    color: #000 !important; /* Text color white */
-    background-color: #fff ; /* Background color black */
-    border-color: #fff ; /* Ensure the border remains black */
-  }
-
-
-.modal-header .btn-close {
-    margin: 0 !important;
+  color: #fff !important;
+  background-color: #000;
+  border: 1px solid #fff;
 }
 
-@media screen and (max-width:426px) {
-    .container{
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        display: flex;
-    }
-    .text{
-        font-size: 16px;
-    }
-    .row{
-        gap: 23px;
-    }
-    .small{
-        justify-content: space-between;
+.btn-outline:hover,
+.btn-outline:focus,
+.btn-outline:active {
+  color: #000 !important;
+  background-color: #fff;
+  border-color: #fff;
+}
 
-    }
-    #subscribe{
-        font-size: 18px;
-        padding-left: 0px !important;
-        padding-right: 0px !important;
-    }
+/* Modal Styles */
+.modal-header .btn-close {
+  margin: 0 !important;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 426px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+  }
+
+  .text {
+    font-size: 16px;
+  }
+
+  .row {
+    gap: 23px;
+  }
+
+  .small {
+    justify-content: space-between;
+  }
+
+  #subscribe {
+    font-size: 18px;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+  }
+}
+
+/* Animations */
+.animated {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fadeInUp {
+  animation-name: fadeInUp;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fadeInDown {
+  animation-name: fadeInDown;
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.fadeInLeft {
+  animation-name: fadeInLeft;
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.fadeInRight {
+  animation-name: fadeInRight;
 }

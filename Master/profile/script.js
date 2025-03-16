@@ -150,6 +150,52 @@ function add(){
     window.location.href="../add/add.html"
 }
 
+document.getElementById("resetPasswordForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // منع إعادة تحميل الصفحة
+
+    const currentPassword = document.getElementById("currentPassword").value;
+    const newPassword = document.getElementById("newPassword").value;
+    const confirmPassword = document.getElementById("confirmPassword").value;
+
+    if (newPassword.length < 6) {
+        alert("يجب أن تكون كلمة المرور الجديدة على الأقل 6 أحرف.");
+        return;
+    }
+
+    if (newPassword !== confirmPassword) {
+        alert("كلمة المرور الجديدة وتأكيدها غير متطابقين.");
+        return;
+    }
+
+    // إرسال البيانات إلى السيرفر
+    fetch('/change-password', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ 
+            currentPassword: currentPassword, 
+            newPassword: newPassword 
+        })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            alert("تم تغيير كلمة المرور بنجاح.");
+            document.getElementById("resetPasswordForm").reset();
+            let modal = bootstrap.Modal.getInstance(document.getElementById('resetPasswordModal'));
+            modal.hide();
+        } else {
+            alert("حدث خطأ: " + data.message);
+        }
+    })
+    .catch(error => {
+        console.error("Error:", error);
+        alert("حدث خطأ في العملية.");
+    });
+});
+
+
 // function saveChanges() {
 //     const fullName = document.getElementById('profileFullNameInput').value;
 //     const phone = document.getElementById('phone').value;

@@ -118,7 +118,7 @@ document.addEventListener("DOMContentLoaded", () => {
         .then(data => {
             data.forEach(card => {
                 const cardElement = `
-                <div class="card" style="max-width: 250px">
+                <div class="card" style="max-width: 250px; height:470px">
                     <img src="${card.image}" class="card-img-top" alt="${card.title}">
                     <div class="card-body">
                         <h5 class="card-title">${card.title}</h5>

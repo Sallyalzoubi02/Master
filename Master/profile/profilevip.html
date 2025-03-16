@@ -19,7 +19,7 @@
     <div id="nav">
 
     </div>
-    <section class="bg1 py-5">
+    <section class=" py-5">
 
         <div class="container py-5">
 
@@ -43,9 +43,20 @@
                                     <p class="times">التدوير:</p>
                                 </div>
                             </div>
-                            <a href="#" class="btn btn-green mt-3 px-5 rounded-pill animated fadeInUp"
+                            <div class="d-flex align-items-center justify-content-center">
+                                <a href="#" class="btn btn-green rounded-pill animated fadeInUp"
                                 data-bs-toggle="modal" data-bs-target="#editProfileModal"
-                                style="border-color: #04534F !important;">تعديل الملف</a>
+                                style="border-color: #04534F !important; font-size: small;">
+                                تعديل الملف
+                            </a>
+
+                            <a href="#" class="btn btn-green rounded-pill animated fadeInUp"
+                                data-bs-toggle="modal" data-bs-target="#resetPasswordModal"
+                                style="border-color: #04534F !important; font-size: small;">
+                                إعادة تعيين كلمة المرور
+                            </a>
+                            </div>
+                            
 
                         </div>
                     </div>
@@ -206,6 +217,35 @@
                 </div>
             </div>
         </div>
+        <!-- Reset Password Modal -->
+<div class="modal fade" id="resetPasswordModal" tabindex="-1" aria-labelledby="resetPasswordModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="resetPasswordModalLabel">إعادة تعيين كلمة المرور</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="resetPasswordForm">
+                    <div class="mb-3">
+                        <label for="currentPassword" class="form-label">كلمة المرور الحالية</label>
+                        <input type="password" class="form-control" id="currentPassword" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="newPassword" class="form-label">كلمة المرور الجديدة</label>
+                        <input type="password" class="form-control" id="newPassword" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="confirmPassword" class="form-label">تأكيد كلمة المرور الجديدة</label>
+                        <input type="password" class="form-control" id="confirmPassword" required>
+                    </div>
+                    <button type="submit" class="btn btn-warning w-100">إعادة تعيين كلمة المرور</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
     </section>
 
 
@@ -217,8 +257,8 @@
             </div>
 
             <div class="row">
-                <div class="col-md-4  mb-5">
-                    <div class="card mb-5" style="width: 100%;">
+                <div class="col-md-3 mb-5">
+                    <div class="card mb-5" style="width: 100%;    height: max-content !important;">
                         <div class="card-head d-flex justify-content-center align-items-center">
                             <img src="../img/empty bottle.webp" class="card-img-top" alt="...">
                         </div>
@@ -253,8 +293,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4  mb-5">
-                    <div class="card mb-5" style="width: 100%;">
+                <div class="col-md-3  mb-5">
+                    <div class="card mb-5" style="width: 100%;    height: max-content !important;">
                         <div class="card-head d-flex justify-content-center align-items-center">
                             <img src="../img/empty bottle.webp" class="card-img-top" alt="...">
                         </div>
@@ -289,8 +329,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4  mb-5">
-                    <div class="card mb-5" style="width: 100%;">
+                <div class="col-md-3  mb-5">
+                    <div class="card mb-5" style="width: 100%;     height: max-content !important;">
                         <div class="card-head d-flex justify-content-center align-items-center">
                             <img src="../img/empty bottle.webp" class="card-img-top" alt="...">
                         </div>
@@ -325,8 +365,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 d-flex justify-content-center align-items-center add  mb-5">
-                    <button class="btn-circle" onclick="add()">
+                <div class="col-md-3 d-flex justify-content-center align-items-center add  mb-5">
+                    <button class="btn-circle" style="height: max-content !important;" onclick="add()">
                         <i class="fa-solid fa-plus"></i>
                     </button>
                 </div>
